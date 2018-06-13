@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081E417B20D159CE0089AFEF /* TimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E417A20D159CE0089AFEF /* TimetableView.swift */; };
 		570FE72B20CA92070006F4A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FE72A20CA92070006F4A1 /* AppDelegate.swift */; };
 		570FE72D20CA92070006F4A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FE72C20CA92070006F4A1 /* ViewController.swift */; };
 		570FE73020CA92070006F4A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570FE72E20CA92070006F4A1 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081E417A20D159CE0089AFEF /* TimetableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableView.swift; sourceTree = "<group>"; };
 		570FE72720CA92070006F4A1 /* jikanwari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jikanwari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570FE72A20CA92070006F4A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570FE72C20CA92070006F4A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				570FE72C20CA92070006F4A1 /* ViewController.swift */,
 				FBDBDCB720D01584007E7672 /* CalendarCell.swift */,
 				FBDBDCB920D019A7007E7672 /* DateManager.swift */,
+				081E417A20D159CE0089AFEF /* TimetableView.swift */,
 				570FE72E20CA92070006F4A1 /* Main.storyboard */,
 				570FE73120CA920A0006F4A1 /* Assets.xcassets */,
 				570FE73320CA920A0006F4A1 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				081E417B20D159CE0089AFEF /* TimetableView.swift in Sources */,
 				570FE72D20CA92070006F4A1 /* ViewController.swift in Sources */,
 				FBDBDCBA20D019A7007E7672 /* DateManager.swift in Sources */,
 				FBDBDCB820D01584007E7672 /* CalendarCell.swift in Sources */,
