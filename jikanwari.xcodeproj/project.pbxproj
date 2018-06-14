@@ -15,6 +15,7 @@
 		570FE73520CA920A0006F4A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570FE73320CA920A0006F4A1 /* LaunchScreen.storyboard */; };
 		570FE74020CA920B0006F4A1 /* jikanwariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FE73F20CA920B0006F4A1 /* jikanwariTests.swift */; };
 		570FE74B20CA920B0006F4A1 /* jikanwariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FE74A20CA920B0006F4A1 /* jikanwariUITests.swift */; };
+		57DA0A4C20D23E5600E14A96 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA0A4B20D23E5600E14A96 /* CollectionViewCell.swift */; };
 		FBDBDCB820D01584007E7672 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBDCB720D01584007E7672 /* CalendarCell.swift */; };
 		FBDBDCBA20D019A7007E7672 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBDCB920D019A7007E7672 /* DateManager.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		570FE74620CA920B0006F4A1 /* jikanwariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jikanwariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		570FE74A20CA920B0006F4A1 /* jikanwariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jikanwariUITests.swift; sourceTree = "<group>"; };
 		570FE74C20CA920B0006F4A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57DA0A4B20D23E5600E14A96 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FBDBDCB720D01584007E7672 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		FBDBDCB920D019A7007E7672 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 				FBDBDCB720D01584007E7672 /* CalendarCell.swift */,
 				FBDBDCB920D019A7007E7672 /* DateManager.swift */,
 				081E417A20D159CE0089AFEF /* TimetableView.swift */,
+				57DA0A4B20D23E5600E14A96 /* CollectionViewCell.swift */,
 				570FE72E20CA92070006F4A1 /* Main.storyboard */,
 				570FE73120CA920A0006F4A1 /* Assets.xcassets */,
 				570FE73320CA920A0006F4A1 /* LaunchScreen.storyboard */,
@@ -267,6 +270,7 @@
 			files = (
 				081E417B20D159CE0089AFEF /* TimetableView.swift in Sources */,
 				570FE72D20CA92070006F4A1 /* ViewController.swift in Sources */,
+				57DA0A4C20D23E5600E14A96 /* CollectionViewCell.swift in Sources */,
 				FBDBDCBA20D019A7007E7672 /* DateManager.swift in Sources */,
 				FBDBDCB820D01584007E7672 /* CalendarCell.swift in Sources */,
 				570FE72B20CA92070006F4A1 /* AppDelegate.swift in Sources */,

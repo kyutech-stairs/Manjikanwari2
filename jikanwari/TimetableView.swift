@@ -12,7 +12,7 @@ class TimetableView: UIViewController, UICollectionViewDataSource{
     //データの個数を返すメソッド
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 30
+        return 25
     }
     
     //データを返すメソッド
@@ -23,10 +23,7 @@ class TimetableView: UIViewController, UICollectionViewDataSource{
             
        
         //セルの背景色をランダムに設定する。
-        cell.backgroundColor = UIColor(red: CGFloat(drand48()),
-                                       green: CGFloat(drand48()),
-                                       blue: CGFloat(drand48()),
-                                       alpha: 1.0)
+        //cell.backgroundColor = UIColor(red: CGFloat(drand48()),green: CGFloat(drand48()),blue: CGFloat(drand48()),alpha: 1.0)
         return cell
     }
     override func viewDidLoad() {
