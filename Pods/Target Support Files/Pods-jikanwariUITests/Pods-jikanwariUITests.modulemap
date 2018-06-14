@@ -1,0 +1,6 @@
+framework module Pods_jikanwariUITests {
+  umbrella header "Pods-jikanwariUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

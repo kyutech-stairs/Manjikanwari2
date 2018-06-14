@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="344.80000000000001" y="1527.8860569715143"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View-->
         <scene sceneID="xU6-uh-dyt">
             <objects>
-                <viewController id="bE9-Bd-z4T" sceneMemberID="viewController">
+                <viewController id="bE9-Bd-z4T" customClass="TableView" customModule="jikanwari" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qMJ-N3-y39">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rM-lF-PDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566" y="1510"/>
+            <point key="canvasLocation" x="1894" y="1613"/>
         </scene>
         <!--カレンダー-->
         <scene sceneID="oVd-fV-eb2">
