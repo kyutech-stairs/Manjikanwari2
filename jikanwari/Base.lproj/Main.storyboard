@@ -130,11 +130,17 @@
                                         <rect key="frame" x="8" y="22" width="31" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Prev"/>
+                                        <connections>
+                                            <action selector="tappedHeaderPrevBtn:" destination="0W9-ZK-97m" eventType="touchUpInside" id="oAO-jz-Gl4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBI-54-KJ6">
                                         <rect key="frame" x="335" y="22" width="32" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="tappedHeaderNextBtn:" destination="0W9-ZK-97m" eventType="touchUpInside" id="Jq5-8a-3iP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,7 +172,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="カレンダー" id="fqs-OR-fOX"/>
                     <connections>
-                        <outlet property="headerTitle" destination="Xj7-kL-mUr" id="ZfX-br-QPU"/>
+                        <outlet property="calendarCollectionView" destination="mPH-qS-3fV" id="fJl-1L-NUG"/>
+                        <outlet property="calendarHeaderView" destination="K1Y-w4-Pl4" id="1g2-5w-wes"/>
+                        <outlet property="headerNextBtn" destination="OBI-54-KJ6" id="pYX-xe-Y5u"/>
+                        <outlet property="headerPrevBtn" destination="pEw-n6-Ukv" id="qRn-Uk-d98"/>
+                        <outlet property="headerTitle" destination="Xj7-kL-mUr" id="jEi-bn-fnK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpE-Ov-zJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
