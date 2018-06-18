@@ -2,7 +2,7 @@
 //  CalendarCell.swift
 //  jikanwari
 //
-//  Created by 陰山賢太 on 2018/06/12.
+//  Created by 陰山賢太 on 2018/06/15.
 //  Copyright © 2018年 Kohei Adachi. All rights reserved.
 //
 
@@ -21,9 +21,13 @@ class CalendarCell: UICollectionViewCell {
         textLabel.textAlignment = NSTextAlignment.center
         // Cellに追加
         self.addSubview(textLabel!)
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        textLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
 }
