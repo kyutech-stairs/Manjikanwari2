@@ -21,13 +21,13 @@ extension UIColor {
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    let dateManager = DateManager()
+    let dateManager = DateManeger()
     let daysPerWeek: Int = 7
     let cellMargin: CGFloat = 2.0
     var selectedDate = Date()
     var today: Date!
     let weekArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-   
+    
     @IBOutlet weak var headerPrevBtn: UIButton!
     @IBOutlet weak var headerNextBtn: UIButton!
     @IBOutlet weak var headerTitle: UILabel!
@@ -63,9 +63,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     //1
-//    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-//        return 2
-//    }
+    //    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    //        return 2
+    //    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -78,7 +78,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if section == 0 {
             return 7
         } else {
-            return dateManager.daysAcquisition() //ここは月によって異なる(後ほど説明します)
+            return dateManager.daysAcquisition() //ここは月によって異なる
         }
     }
     //3
@@ -97,10 +97,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             cell.textLabel.text = weekArray[indexPath.row]
         } else {
             print("xxx")
-            cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath as NSIndexPath)
-            //月によって1日の場所は異なる(後ほど説明します)
+            cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
+            //月によって1日の場所は異なる
         }
-
+        
         return cell
     }
     
