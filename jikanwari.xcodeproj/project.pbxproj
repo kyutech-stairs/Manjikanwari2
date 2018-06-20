@@ -18,6 +18,9 @@
 		570FE73520CA920A0006F4A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570FE73320CA920A0006F4A1 /* LaunchScreen.storyboard */; };
 		570FE74020CA920B0006F4A1 /* jikanwariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FE73F20CA920B0006F4A1 /* jikanwariTests.swift */; };
 		570FE74B20CA920B0006F4A1 /* jikanwariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FE74A20CA920B0006F4A1 /* jikanwariUITests.swift */; };
+		5795993F20DA527A000FCFC8 /* Calender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5795993E20DA527A000FCFC8 /* Calender.storyboard */; };
+		5795994120DA5285000FCFC8 /* Manji.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5795994020DA5285000FCFC8 /* Manji.storyboard */; };
+		5795994320DA5291000FCFC8 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5795994220DA5291000FCFC8 /* Schedule.storyboard */; };
 		57DA0A4C20D23E5600E14A96 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA0A4B20D23E5600E14A96 /* CollectionViewCell.swift */; };
 		57DA0A5020D2449F00E14A96 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA0A4F20D2449F00E14A96 /* TableView.swift */; };
 		FBDBDCB820D01584007E7672 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBDCB720D01584007E7672 /* CalendarCell.swift */; };
@@ -61,6 +64,9 @@
 		570FE74620CA920B0006F4A1 /* jikanwariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jikanwariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		570FE74A20CA920B0006F4A1 /* jikanwariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jikanwariUITests.swift; sourceTree = "<group>"; };
 		570FE74C20CA920B0006F4A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5795993E20DA527A000FCFC8 /* Calender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calender.storyboard; sourceTree = "<group>"; };
+		5795994020DA5285000FCFC8 /* Manji.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Manji.storyboard; sourceTree = "<group>"; };
+		5795994220DA5291000FCFC8 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		57DA0A4B20D23E5600E14A96 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		57DA0A4F20D2449F00E14A96 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		8098DAE86F3B51A0AC394F26 /* Pods-jikanwariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jikanwariTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jikanwariTests/Pods-jikanwariTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +138,9 @@
 				57DA0A4B20D23E5600E14A96 /* CollectionViewCell.swift */,
 				57DA0A4F20D2449F00E14A96 /* TableView.swift */,
 				570FE72E20CA92070006F4A1 /* Main.storyboard */,
+				5795994020DA5285000FCFC8 /* Manji.storyboard */,
+				5795994220DA5291000FCFC8 /* Schedule.storyboard */,
+				5795993E20DA527A000FCFC8 /* Calender.storyboard */,
 				570FE73120CA920A0006F4A1 /* Assets.xcassets */,
 				570FE73320CA920A0006F4A1 /* LaunchScreen.storyboard */,
 				570FE73620CA920B0006F4A1 /* Info.plist */,
@@ -288,9 +297,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5795994120DA5285000FCFC8 /* Manji.storyboard in Resources */,
+				5795993F20DA527A000FCFC8 /* Calender.storyboard in Resources */,
 				570FE73520CA920A0006F4A1 /* LaunchScreen.storyboard in Resources */,
 				570FE73220CA920A0006F4A1 /* Assets.xcassets in Resources */,
 				570FE73020CA92070006F4A1 /* Main.storyboard in Resources */,
+				5795994320DA5291000FCFC8 /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
