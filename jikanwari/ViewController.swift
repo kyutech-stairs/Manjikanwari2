@@ -34,6 +34,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var calendarHeaderView: UIView!
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     
+    @IBAction func right(_ sender: Any) {
+        selectedDate = dateManager.prevMonth(date: selectedDate)
+        calendarCollectionView.reloadData()
+        headerTitle.text = changeHeaderTitle()
+    }
+    
+    @IBAction func left(_ sender: Any) {
+        selectedDate = dateManager.nextMonth(date: selectedDate)
+        calendarCollectionView.reloadData()
+        headerTitle.text = changeHeaderTitle()
+    }
     //Prevタップ時
     @IBAction func tappedHeaderPrevBtn(_ sender: UIButton) {
         selectedDate = dateManager.prevMonth(date: selectedDate)

@@ -10,7 +10,8 @@ import UIKit
 
 class TimetableView: UIViewController, UICollectionViewDataSource{
     
-    let SubjectNames: [String] = ["xxx","プログラム設計","zzz"]
+    let SubjectNames: [String] = ["","プログラム設計","","","人工知能プログラミング","","プログラム設計","","","人工知能プログラミング","言語処理工学","","言語処理工学","実験Ⅱ","OS","OS","離散数学Ⅰ",
+                                  "","実験Ⅱ","離散数学Ⅰ","","","","情報人類学","法律学B"]
     
     //データの個数を返すメソッド
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
