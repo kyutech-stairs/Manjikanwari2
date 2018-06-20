@@ -9,6 +9,10 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var subject_label: UILabel!
+    
+    @IBOutlet weak var subjectText: UITextView!
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,6 +24,4 @@ class CollectionViewCell: UICollectionViewCell {
         //self.layer.cornerRadius = 8.0
         
     }
-    
-    @IBOutlet weak var subject_label: UILabel!
 }
