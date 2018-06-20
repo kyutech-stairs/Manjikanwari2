@@ -87,7 +87,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="x5H-vH-uZj"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rfm-YU-suD" appends="YES" id="DEs-dy-LPn"/>
+                            <outletCollection property="gestureRecognizers" destination="r4I-2m-X1C" appends="YES" id="up7-at-7wP"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" id="lX5-Tc-yu4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -100,6 +105,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6q-HN-Ry6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="rfm-YU-suD">
+                    <connections>
+                        <action selector="right:" destination="dni-hf-ktt" id="9BK-dA-vVR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="r4I-2m-X1C">
+                    <connections>
+                        <action selector="left:" destination="dni-hf-ktt" id="fil-9A-icW"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1740" y="72"/>
         </scene>
