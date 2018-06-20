@@ -96,7 +96,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if indexPath.section == 0 {
             cell.textLabel.text = weekArray[indexPath.row]
         } else {
-            print("xxx")
+            //テスト表示
+            //print("xxx")
             cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
             //月によって1日の場所は異なる
         }
