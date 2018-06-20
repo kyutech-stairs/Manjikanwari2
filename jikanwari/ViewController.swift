@@ -86,19 +86,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CalendarCell
         //テキストカラー
         if (indexPath.row % 7 == 0) {
-            cell.textLabel.textColor = UIColor.lightRed()
+            cell.dateLabel.textColor = UIColor.lightRed()
         } else if (indexPath.row % 7 == 6) {
-            cell.textLabel.textColor = UIColor.lightBlue()
+            cell.dateLabel.textColor = UIColor.lightBlue()
         } else {
-            cell.textLabel.textColor = UIColor.gray
+            cell.dateLabel.textColor = UIColor.gray
         }
         //テキスト配置
         if indexPath.section == 0 {
-            cell.textLabel.text = weekArray[indexPath.row]
+            cell.dateLabel.text = weekArray[indexPath.row]
         } else {
             //テスト表示
             //print("xxx")
-            cell.textLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
+            cell.dateLabel.text = dateManager.conversionDateFormat(indexPath: indexPath)
             //月によって1日の場所は異なる
         }
         
@@ -107,10 +107,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     //セルのサイズを設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfMargin: CGFloat = 8.0
-        let width: CGFloat = (collectionView.frame.size.width - cellMargin * numberOfMargin) / CGFloat(daysPerWeek)
-        let height: CGFloat = width * 1.0
-        return CGSize(width: width, height: height)
+        if indexPath.section == 0 {
+            let numberOfMargin: CGFloat = 8.0
+            let width: CGFloat = (collectionView.frame.size.width - cellMargin * numberOfMargin) / CGFloat(daysPerWeek)
+            let height: CGFloat = 20.0
+            return CGSize(width: width, height: height)
+        } else {
+            let numberOfMargin: CGFloat = 8.0
+            let width: CGFloat = (collectionView.frame.size.width - cellMargin * numberOfMargin) / CGFloat(daysPerWeek)
+            let height: CGFloat = (collectionView.frame.size.height - 20.0) / (CGFloat(dateManager.daysAcquisition()) / 7.0)
+            return CGSize(width: width, height: height)
+        }
         
     }
     
