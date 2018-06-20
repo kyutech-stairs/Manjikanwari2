@@ -48,7 +48,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQo-Xb-FCQ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQo-Xb-FCQ">
                                 <rect key="frame" x="0.0" y="103" width="375" height="515"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,7 +65,23 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJb-8Q-5AC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="GJb-8Q-5AC" firstAttribute="top" secondItem="26f-M6-jmw" secondAttribute="top" id="5mx-pw-yCt"/>
+                                            <constraint firstItem="GJb-8Q-5AC" firstAttribute="centerX" secondItem="26f-M6-jmw" secondAttribute="centerX" id="t9I-P6-hm5"/>
+                                            <constraint firstItem="GJb-8Q-5AC" firstAttribute="leading" secondItem="26f-M6-jmw" secondAttribute="leading" id="xxC-UH-3ce"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="GJb-8Q-5AC" id="7wE-Hv-8ux"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
