@@ -58,6 +58,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         headerTitle.text = changeHeaderTitle()
     }
     
+    //画面遷移から戻る処理
+    @IBAction func unwindToCalendar(segue: UIStoryboardSegue){
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

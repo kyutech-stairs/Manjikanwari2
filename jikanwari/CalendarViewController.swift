@@ -11,8 +11,12 @@ import UIKit
 
 class CalendarViewController: UIViewController{
     
+    @IBOutlet weak var Label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Title"
     }
     
     override func didReceiveMemoryWarning() {
