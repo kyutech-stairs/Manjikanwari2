@@ -102,6 +102,7 @@
                         <outlet property="headerNextBtn" destination="oMV-cj-4NT" id="WxZ-cL-ccp"/>
                         <outlet property="headerPrevBtn" destination="ZFc-JI-YkM" id="hCc-1z-p3J"/>
                         <outlet property="headerTitle" destination="Prc-YV-gHb" id="ULi-aT-qyo"/>
+                        <segue destination="zEL-Bo-TaB" kind="presentation" identifier="toCalendarViewController" id="nPn-xO-Nbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6q-HN-Ry6" userLabel="First Responder" sceneMemberID="firstResponder"/>
