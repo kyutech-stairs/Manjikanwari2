@@ -136,6 +136,7 @@
 				570FE72C20CA92070006F4A1 /* ViewController.swift */,
 				FBDBDCB720D01584007E7672 /* CalendarCell.swift */,
 				FBDBDCB920D019A7007E7672 /* DateManager.swift */,
+				FB7F708120DB726A00AC173C /* CalendarViewController.swift */,
 				081E417A20D159CE0089AFEF /* TimetableView.swift */,
 				57DA0A4B20D23E5600E14A96 /* CollectionViewCell.swift */,
 				57DA0A4F20D2449F00E14A96 /* TableView.swift */,
@@ -146,7 +147,6 @@
 				570FE73120CA920A0006F4A1 /* Assets.xcassets */,
 				570FE73320CA920A0006F4A1 /* LaunchScreen.storyboard */,
 				570FE73620CA920B0006F4A1 /* Info.plist */,
-				FB7F708120DB726A00AC173C /* CalendarViewController.swift */,
 			);
 			path = jikanwari;
 			sourceTree = "<group>";
