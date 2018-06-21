@@ -23,6 +23,7 @@
 		5795994320DA5291000FCFC8 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5795994220DA5291000FCFC8 /* Schedule.storyboard */; };
 		57DA0A4C20D23E5600E14A96 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA0A4B20D23E5600E14A96 /* CollectionViewCell.swift */; };
 		57DA0A5020D2449F00E14A96 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA0A4F20D2449F00E14A96 /* TableView.swift */; };
+		FB7F708220DB726A00AC173C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7F708120DB726A00AC173C /* CalendarViewController.swift */; };
 		FBDBDCB820D01584007E7672 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBDCB720D01584007E7672 /* CalendarCell.swift */; };
 		FBDBDCBA20D019A7007E7672 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBDCB920D019A7007E7672 /* DateManager.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		C163818DCC6E1BD04901B9FF /* Pods-jikanwari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jikanwari.release.xcconfig"; path = "Pods/Target Support Files/Pods-jikanwari/Pods-jikanwari.release.xcconfig"; sourceTree = "<group>"; };
 		D8FD5EE540315E385BF6AF49 /* Pods_jikanwariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jikanwariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F6C0F9F7B9365AEE5463D9 /* Pods-jikanwariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jikanwariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jikanwariUITests/Pods-jikanwariUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB7F708120DB726A00AC173C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		FBDBDCB720D01584007E7672 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		FBDBDCB920D019A7007E7672 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 				570FE73120CA920A0006F4A1 /* Assets.xcassets */,
 				570FE73320CA920A0006F4A1 /* LaunchScreen.storyboard */,
 				570FE73620CA920B0006F4A1 /* Info.plist */,
+				FB7F708120DB726A00AC173C /* CalendarViewController.swift */,
 			);
 			path = jikanwari;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB7F708220DB726A00AC173C /* CalendarViewController.swift in Sources */,
 				081E417B20D159CE0089AFEF /* TimetableView.swift in Sources */,
 				570FE72D20CA92070006F4A1 /* ViewController.swift in Sources */,
 				57DA0A4C20D23E5600E14A96 /* CollectionViewCell.swift in Sources */,
