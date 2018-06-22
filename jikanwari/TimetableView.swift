@@ -24,7 +24,8 @@ class TimetableView: UIViewController, UICollectionViewDataSource{
     {
         //コレクションビューから識別子「Cell」のセルを取得する。
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-    
+        
+        
         cell.subjectText.text = SubjectNames[indexPath.item]
         
         cell.subjectText.text = SubjectNames[indexPath.item]
