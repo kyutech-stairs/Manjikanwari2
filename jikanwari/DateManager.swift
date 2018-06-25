@@ -69,7 +69,16 @@ class DateManeger: NSObject {
         dateForCellAtIndexPath(numberOfItems: numberOfItems)
         let formatter: DateFormatter = DateFormatter()
         formatter.dateFormat = "d"
+        // テスト表示
+        //print(indexPath)
         return formatter.string(from: currentMonthOfDates[indexPath.row] as Date)
+    }
+    
+    func getDate(indenxPath: IndexPath) -> String {
+        dateForCellAtIndexPath(numberOfItems: numberOfItems)
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter.string(from: currentMonthOfDates[indenxPath.row] as Date)
     }
     
     //前月の表示

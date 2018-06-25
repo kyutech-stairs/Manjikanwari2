@@ -158,10 +158,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //CalendarCellタップ時の操作
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
-        //giveDate = getDate()
-        let formatter: DateFormatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        giveDate = formatter.string(from: selectedDate)
+        giveDate = dateManager.getDate(indenxPath: indexPath)
+//        let formatter: DateFormatter = DateFormatter()
+//        formatter.dateFormat = "yyyy/MM/dd"
+//        giveDate = formatter.string(from: selectedDate)
         performSegue(withIdentifier: "toCalendarViewController", sender: nil)
     }
     
