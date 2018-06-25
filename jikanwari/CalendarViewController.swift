@@ -13,10 +13,12 @@ class CalendarViewController: UIViewController{
     
     @IBOutlet weak var Label: UILabel!
     
+    var receiveDate: String = "today"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.title = "Title"
+        Label.text = receiveDate
+        self.navigationItem.title = receiveDate
     }
     
     override func didReceiveMemoryWarning() {
