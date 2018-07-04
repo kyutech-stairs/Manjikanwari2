@@ -43,6 +43,7 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        collectionView.reloadData()
         displayTimeTable()
     }
 
@@ -70,10 +71,11 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
     
     func displayTimeTable(){
         if ((userDefaults.object(forKey: "Subject")) != nil) {
-            print("データ有り")
+            //print("データ有り")
             SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
         }
     }
+    @IBOutlet weak var collectionView: UICollectionView!
     
     /*
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
