@@ -27,10 +27,15 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         //コレクションビューから識別子「Cell」のセルを取得する。
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         
-        
+        /*
         cell.subjectText.text = SubjectNames[indexPath.item]
         
         cell.subjectText.text = SubjectNames[indexPath.item]
+        */
+        cell.subject_label.text = SubjectNames[indexPath.item]
+        
+        cell.subject_label.text = SubjectNames[indexPath.item]
+        
         //セルの背景色をランダムに設定する。
         //cell.backgroundColor = UIColor(red: CGFloat(drand48()),green: CGFloat(drand48()),blue: CGFloat(drand48()),alpha: 1.0)
         return cell
