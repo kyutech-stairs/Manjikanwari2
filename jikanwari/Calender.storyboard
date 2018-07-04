@@ -154,6 +154,8 @@
                     </view>
                     <connections>
                         <outlet property="Label" destination="w6f-es-JYE" id="Swm-C7-4Yl"/>
+                        <outlet property="navigationBar" destination="Kmd-db-7NU" id="3B0-XA-Ofe"/>
+                        <outlet property="navigationTitle" destination="hEr-aY-9iJ" id="r0n-i0-PGq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FET-A4-94X" userLabel="First Responder" sceneMemberID="firstResponder"/>
