@@ -43,13 +43,15 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        self.tabBarController?.delegate = self
         //displayTimeTable()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        collectionView.reloadData()
         displayTimeTable()
+        collectionView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,6 +80,7 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         if ((userDefaults.object(forKey: "Subject")) != nil) {
             //print("データ有り")
             SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
+            print(SubjectNames)
         }
     }
     @IBOutlet weak var collectionView: UICollectionView!
@@ -102,5 +105,13 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+//extension TimetableView: UITabBarControllerDelegate {
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//        print("selected")
+//        self.displayTimeTable()
+//        self.collectionView.reloadData()
+//        
+//    }
+//}
+
