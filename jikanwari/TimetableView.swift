@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimetableView: UIViewController, UICollectionViewDataSource{
+class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     let SubjectNames: [String] = ["","プログラム設計","","","人工知能プログラミング","","プログラム設計","","","人工知能プログラミング","言語処理工学","","言語処理工学","実験Ⅱ","OS","OS","離散数学Ⅰ",
                                   "","実験Ⅱ","離散数学Ⅰ","","","","情報人類学","法律学B"]
@@ -20,7 +20,7 @@ class TimetableView: UIViewController, UICollectionViewDataSource{
     }
     
     //データを返すメソッド
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         //コレクションビューから識別子「Cell」のセルを取得する。
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
@@ -42,6 +42,24 @@ class TimetableView: UIViewController, UICollectionViewDataSource{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //CalendarCellタップ時の操作
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        print("tap!")
+        if(SubjectNames[indexPath.item] == ""){
+            
+            performSegue(withIdentifier: "Segue", sender: nil)
+        
+        }
+    }
+    // Segue 準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "Segue") {
+  
+        }
+    }
+    
     /*
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
