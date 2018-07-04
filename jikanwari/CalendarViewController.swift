@@ -20,9 +20,15 @@ class CalendarViewController: FormViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Label.text = receiveDate
-        
-        navigationTitle.title = receiveDate
+        //Label.text = receiveDate
+        //navigationTitle.title = receiveDate
+        self.navigationItem.title = receiveDate
+        form
+        +++ Section()
+            <<< TextRow("TextFiled") {
+                $0.title = "課題名"
+                $0.placeholder = "ここに入力"
+        }
     }
     
     override func didReceiveMemoryWarning() {
