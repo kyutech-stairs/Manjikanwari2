@@ -38,25 +38,29 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBAction func right(_ sender: Any) {
         selectedDate = dateManager.prevMonth(date: selectedDate)
         calendarCollectionView.reloadData()
-        headerTitle.text = changeHeaderTitle()
+        //headerTitle.text = changeHeaderTitle()
+        self.navigationItem.title = changeHeaderTitle()
     }
     
     @IBAction func left(_ sender: Any) {
         selectedDate = dateManager.nextMonth(date: selectedDate)
         calendarCollectionView.reloadData()
-        headerTitle.text = changeHeaderTitle()
+        //headerTitle.text = changeHeaderTitle()
+        self.navigationItem.title = changeHeaderTitle()
     }
     //Prevタップ時
-    @IBAction func tappedHeaderPrevBtn(_ sender: UIButton) {
+    @IBAction func tappedHeaderPrevBtn(_ sender: Any) {
         selectedDate = dateManager.prevMonth(date: selectedDate)
         calendarCollectionView.reloadData()
-        headerTitle.text = changeHeaderTitle()
+        //headerTitle.text = changeHeaderTitle()
+        self.navigationItem.title = changeHeaderTitle()
     }
     //Nextタップ時
-    @IBAction func tappedHeaderNextBtn(_ sender: UIButton) {
+    @IBAction func tappedHeaderNextBtn(_ sender: Any) {
         selectedDate = dateManager.nextMonth(date: selectedDate)
         calendarCollectionView.reloadData()
-        headerTitle.text = changeHeaderTitle()
+        //headerTitle.text = changeHeaderTitle()
+        self.navigationItem.title = changeHeaderTitle()
     }
     
     //画面遷移から戻る処理
@@ -70,7 +74,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         calendarCollectionView.dataSource = self
         calendarCollectionView.backgroundColor = UIColor.white
         
-        headerTitle.text = changeHeaderTitle()
+        self.navigationItem.title = changeHeaderTitle()
     }
     
     override func didReceiveMemoryWarning() {
@@ -163,6 +167,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //        formatter.dateFormat = "yyyy/MM/dd"
 //        giveDate = formatter.string(from: selectedDate)
         performSegue(withIdentifier: "toCalendarViewController", sender: nil)
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
+//        vc.receiveDate = giveDate!
+//        present(vc, animated: true, completion: nil)
     }
     
     //画面遷移先にデータを渡す

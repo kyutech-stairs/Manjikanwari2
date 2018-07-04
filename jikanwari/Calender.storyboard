@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dni-hf-ktt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ajc-GA-3wz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="AzH-De-BAo">
+            <objects>
+                <navigationController id="ajc-GA-3wz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y5P-Vd-67j">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dni-hf-ktt" kind="relationship" relationship="rootViewController" id="kIZ-1x-g9G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QDM-9Q-uZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="791" y="72"/>
+        </scene>
         <!--Calendar-->
         <scene sceneID="n8Q-B1-ph9">
             <objects>
@@ -18,36 +34,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMT-Ex-spo">
-                                <rect key="frame" x="0.0" y="20" width="375" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2018年6月" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prc-YV-gHb">
-                                        <rect key="frame" x="145" y="27" width="84" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFc-JI-YkM">
-                                        <rect key="frame" x="8" y="22" width="31" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Prev"/>
-                                        <connections>
-                                            <action selector="tappedHeaderPrevBtn:" destination="dni-hf-ktt" eventType="touchUpInside" id="bjl-OF-Gsz"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMV-cj-4NT">
-                                        <rect key="frame" x="335" y="22" width="32" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Next"/>
-                                        <connections>
-                                            <action selector="tappedHeaderNextBtn:" destination="dni-hf-ktt" eventType="touchUpInside" id="LrG-wp-f5O"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQo-Xb-FCQ">
                                 <rect key="frame" x="0.0" y="103" width="375" height="515"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,14 +81,22 @@
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" id="lX5-Tc-yu4"/>
+                    <navigationItem key="navigationItem" id="JSV-AD-7to">
+                        <barButtonItem key="leftBarButtonItem" title="Prev" id="SOx-Lh-glU">
+                            <connections>
+                                <action selector="tappedHeaderPrevBtn:" destination="dni-hf-ktt" id="a53-eh-flR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="wo2-yM-sSN">
+                            <connections>
+                                <action selector="tappedHeaderNextBtn:" destination="dni-hf-ktt" id="of0-3l-CBi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarCollectionView" destination="eQo-Xb-FCQ" id="pwx-ns-F4q"/>
-                        <outlet property="calendarHeaderView" destination="iMT-Ex-spo" id="eYl-nH-FMl"/>
-                        <outlet property="headerNextBtn" destination="oMV-cj-4NT" id="WxZ-cL-ccp"/>
-                        <outlet property="headerPrevBtn" destination="ZFc-JI-YkM" id="hCc-1z-p3J"/>
-                        <outlet property="headerTitle" destination="Prc-YV-gHb" id="ULi-aT-qyo"/>
-                        <segue destination="zEL-Bo-TaB" kind="presentation" identifier="toCalendarViewController" id="nPn-xO-Nbr"/>
+                        <segue destination="zEL-Bo-TaB" kind="show" identifier="toCalendarViewController" id="Wd1-ms-rUQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6q-HN-Ry6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,7 +116,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="PJP-PK-pBT">
             <objects>
-                <viewController id="zEL-Bo-TaB" customClass="CalendarViewController" customModule="jikanwari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" id="zEL-Bo-TaB" customClass="CalendarViewController" customModule="jikanwari" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tIY-aT-mjz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
