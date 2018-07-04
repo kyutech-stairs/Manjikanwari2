@@ -8,12 +8,13 @@
 
 import UIKit
 
-class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate{
     
     //let SubjectNames: [String] = ["","プログラム設計","","","人工知能プログラミング","","プログラム設計","","","人工知能プログラミング","言語処理工学","","言語処理工学","実験Ⅱ","OS","OS","離散数学Ⅰ",
     //                              "","実験Ⅱ","離散数学Ⅰ","","","","情報人類学","法律学B"]
     var SubjectNames = Array(repeating:"", count:25)
-    var SubjectID: [Int] = [0]
+    var SubjectID = 0
+    let userDefaults = UserDefaults.standard
     //データの個数を返すメソッド
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -21,7 +22,7 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
     }
     
     //データを返すメソッド
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         //コレクションビューから識別子「Cell」のセルを取得する。
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
@@ -37,6 +38,12 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //displayTimeTable()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        displayTimeTable()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +56,7 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         print(indexPath)
         print("tap!")
         if(SubjectNames[indexPath.item] == ""){
-            SubjectID = [indexPath.item]
+            SubjectID = indexPath.item
             performSegue(withIdentifier: "Segue", sender: nil)
         }
     }
@@ -58,6 +65,13 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         if (segue.identifier == "Segue") {
             let vc = segue.destination as! TableView
             vc.receiveID = SubjectID
+        }
+    }
+    
+    func displayTimeTable(){
+        if ((userDefaults.object(forKey: "Subject")) != nil) {
+            print("データ有り")
+            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
         }
     }
     
