@@ -10,7 +10,7 @@ import UIKit
 import Eureka
 
 class TableView: FormViewController {
-    
+    var receiveID: [Int] = [0]
     override func viewDidLoad() {
         super.viewDidLoad()
             
@@ -33,11 +33,10 @@ class TableView: FormViewController {
             <<< ButtonRow(){
                 $0.title = "Save"
                 $0.onCellSelection{ [unowned self] cell, row in
-                    //self.printAll()
+                    
                 }
         }
-        
-        // Do any additional setup after loading the view.
+        print(receiveID)
     }
 
     override func didReceiveMemoryWarning() {
