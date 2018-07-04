@@ -8,17 +8,27 @@
 
 import Foundation
 import UIKit
+import Eureka
 
-class CalendarViewController: UIViewController{
+class CalendarViewController: FormViewController{
     
     @IBOutlet weak var Label: UILabel!
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var navigationTitle: UINavigationItem!
     
     var receiveDate: String = "today"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Label.text = receiveDate
+        //Label.text = receiveDate
+        //navigationTitle.title = receiveDate
         self.navigationItem.title = receiveDate
+        form
+        +++ Section()
+            <<< TextRow("TextFiled") {
+                $0.title = "課題名"
+                $0.placeholder = "ここに入力"
+        }
     }
     
     override func didReceiveMemoryWarning() {
