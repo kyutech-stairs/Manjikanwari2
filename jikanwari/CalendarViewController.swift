@@ -25,9 +25,21 @@ class CalendarViewController: FormViewController{
         self.navigationItem.title = receiveDate
         form
         +++ Section()
-            <<< TextRow("TextFiled") {
+            <<< TextRow("Subject") {
+                $0.title = "科目名"
+                $0.placeholder = "科目名"
+        }
+            <<< TextRow("Task") {
                 $0.title = "課題名"
-                $0.placeholder = "ここに入力"
+                $0.placeholder = "課題名"
+        }
+            <<< TextRow("Deadline") {
+                $0.title = "〆切"
+                $0.placeholder = "〆切"
+        }
+            <<< TextRow("Place") {
+                $0.title = "提出場所"
+                $0.placeholder = "提出場所"
         }
     }
     
