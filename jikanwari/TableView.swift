@@ -10,12 +10,14 @@ import UIKit
 import Eureka
 
 class TableView: FormViewController {
-    
+    var receiveID = 0
+    let userDefaults = UserDefaults.standard
+    var SubjectNames = Array(repeating:"", count:25)
     override func viewDidLoad() {
         super.viewDidLoad()
             
             form +++ Section("科目情報")
-            <<< TextRow(){ row in
+            <<< NameRow("科目名"){ row in
                 row.title = "科目名"
                 row.placeholder = "科目名を入力"
                 }
@@ -33,11 +35,10 @@ class TableView: FormViewController {
             <<< ButtonRow(){
                 $0.title = "Save"
                 $0.onCellSelection{ [unowned self] cell, row in
-                    //self.printAll()
+                    self.didtapSaveButton()
                 }
         }
-        
-        // Do any additional setup after loading the view.
+        print(receiveID)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +46,28 @@ class TableView: FormViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func didtapSaveButton(){
+        // Get the value of a single row
+        let nameRow = form.rowBy(tag: "科目名") as! NameRow
+        let name = nameRow.value ?? ""
+        //print(name)
+        
+        if(name != ""){
+            
+        if ((userDefaults.object(forKey: "Subject")) != nil) {
+            print("データ有り")
+            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
+        }
+ 
+        // SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
+        SubjectNames[receiveID] = name
+        userDefaults.set(SubjectNames,forKey: "Subject")
+        
+        self.navigationController?.popViewController(animated: true)
+        
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -74,6 +74,7 @@ class DateManeger: NSObject {
         return formatter.string(from: currentMonthOfDates[indexPath.row] as Date)
     }
     
+    //日付の表示
     func getDate(indenxPath: IndexPath) -> String {
         dateForCellAtIndexPath(numberOfItems: numberOfItems)
         let formatter: DateFormatter = DateFormatter()

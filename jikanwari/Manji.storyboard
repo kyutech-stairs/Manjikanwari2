@@ -13,10 +13,20 @@
         <!--Manji-->
         <scene sceneID="aej-FB-hHU">
             <objects>
-                <viewController id="6J8-rO-o3U" sceneMemberID="viewController">
+                <viewController id="6J8-rO-o3U" customClass="ManjiViewController" customModule="jikanwari" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VUH-dY-RTG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvo-70-yUw">
+                                <rect key="frame" x="-8" y="286" width="390" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="download.png"/>
+                                <connections>
+                                    <action selector="jikanwariDelete:" destination="6J8-rO-o3U" eventType="touchUpInside" id="Oyq-3t-mPV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="52v-oh-fk0"/>
                     </view>
@@ -25,7 +35,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tzd-ha-hJ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076" y="816"/>
+            <point key="canvasLocation" x="2076" y="815.44227886056979"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="download.png" width="640" height="147"/>
+    </resources>
 </document>
