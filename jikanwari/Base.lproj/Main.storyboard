@@ -29,7 +29,7 @@
         <scene sceneID="y1a-o9-V66">
             <objects>
                 <viewControllerPlaceholder storyboardName="Schedule" id="iTZ-Qs-U2y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="a18-s6-7Xi"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" id="a18-s6-7Xi"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFG-MN-ODr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +39,7 @@
         <scene sceneID="ZN0-gC-Jrf">
             <objects>
                 <viewControllerPlaceholder storyboardName="Manji" id="bqQ-t8-8iM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7vB-ZB-UFD"/>
+                    <tabBarItem key="tabBarItem" title="Manji" id="7vB-ZB-UFD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7c-IW-MvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,7 +49,7 @@
         <scene sceneID="WEj-nb-lcd">
             <objects>
                 <viewControllerPlaceholder storyboardName="Calender" id="lrs-z9-Evk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="NZ4-UI-Wbz"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" id="NZ4-UI-Wbz"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pi5-bH-tpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

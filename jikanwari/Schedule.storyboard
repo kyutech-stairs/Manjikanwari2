@@ -94,11 +94,11 @@
             </objects>
             <point key="canvasLocation" x="2532" y="1654.7226386806599"/>
         </scene>
-        <!--Item-->
+        <!--Schedule-->
         <scene sceneID="WF6-B0-Z8R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cNT-SX-Sq4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="oe4-wW-GNt"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" id="oe4-wW-GNt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mbm-Fb-TRN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

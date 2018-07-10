@@ -10,10 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Calendar-->
         <scene sceneID="AzH-De-BAo">
             <objects>
                 <navigationController id="ajc-GA-3wz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" id="k4D-Tx-AZX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y5P-Vd-67j">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
