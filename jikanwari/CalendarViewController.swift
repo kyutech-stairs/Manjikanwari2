@@ -41,9 +41,22 @@ class CalendarViewController: FormViewController{
                 $0.title = "提出場所"
                 $0.placeholder = "提出場所"
         }
+            // Button
+            +++ Section()
+            <<< ButtonRow(){
+                $0.title = "Save"
+                $0.onCellSelection{ [unowned self] cell, row in
+                    self.didtapSaveButton()
+                }
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func didtapSaveButton(){
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }
