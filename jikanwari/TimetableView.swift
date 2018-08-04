@@ -7,18 +7,18 @@
 //
 
 import UIKit
-
+import RealmSwift
 class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate{
     
     //let SubjectNames: [String] = ["","プログラム設計","","","人工知能プログラミング","","プログラム設計","","","人工知能プログラミング","言語処理工学","","言語処理工学","実験Ⅱ","OS","OS","離散数学Ⅰ",
     //                              "","実験Ⅱ","離散数学Ⅰ","","","","情報人類学","法律学B"]
-    var SubjectNames = Array(repeating:"", count:25)
+   // var SubjectNames = Array(repeating:"", count:25)
     var SubjectID = 0
-    let userDefaults = UserDefaults.standard
+   // let userDefaults = UserDefaults.standard
     //データの個数を返すメソッド
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return SubjectNames.count
+        return 25
     }
     
     //データを返すメソッド
@@ -32,9 +32,34 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         
         cell.subjectText.text = SubjectNames[indexPath.item]
         */
-        cell.subject_label.text = SubjectNames[indexPath.item]
+        //indexpathをプライマリーキーに科目をデータベースから読み出す
         
-        cell.subject_label.text = SubjectNames[indexPath.item]
+        do {
+            let realm = try! Realm()
+            //            let obj = realm.objects(RealmStudent.self).last!
+            let obj = realm.object(ofType: Subject.self, forPrimaryKey: indexPath.item)
+            print(obj?.id)
+            print(obj?.name)
+            if(obj?.id == nil){
+                cell.subject_label.text = ""
+            }
+            else {
+                cell.subject_label.text = obj!.name
+            }
+//            print(obj?.name)
+//            print(obj?.age)
+//            //            print(obj?.name)
+//            //            print(obj?.age)
+        } catch  {
+            print("")
+        }
+        
+//        cell.subject_label.text = SubjectNames[indexPath.item]
+//        
+//        cell.subject_label.text = SubjectNames[indexPath.item]
+//        
+        
+        
         
         //セルの背景色をランダムに設定する。
         //cell.backgroundColor = UIColor(red: CGFloat(drand48()),green: CGFloat(drand48()),blue: CGFloat(drand48()),alpha: 1.0)
@@ -63,10 +88,20 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
         print("tap!")
-        if(SubjectNames[indexPath.item] == ""){
-            SubjectID = indexPath.item
-            performSegue(withIdentifier: "Segue", sender: nil)
+        do{
+            let realm = try! Realm()
+            let obj = realm.object(ofType: Subject.self, forPrimaryKey: indexPath.item)
+//            print(obj?.id)
+//            print(obj?.name)
+            if(obj?.id == nil){
+                SubjectID = indexPath.item
+                performSegue(withIdentifier: "Segue", sender: nil)
+            }
         }
+        catch{
+            print("Extension Error")
+        }
+
     }
     // Segue 準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
@@ -77,11 +112,11 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
     }
     
     func displayTimeTable(){
-        if ((userDefaults.object(forKey: "Subject")) != nil) {
-            //print("データ有り")
-            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
-            print(SubjectNames)
-        }
+//        if ((userDefaults.object(forKey: "Subject")) != nil) {
+//            //print("データ有り")
+//            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
+//            print(SubjectNames)
+//        }
     }
     @IBOutlet weak var collectionView: UICollectionView!
     
