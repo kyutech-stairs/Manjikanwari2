@@ -33,34 +33,11 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         cell.subjectText.text = SubjectNames[indexPath.item]
         */
         //indexpathをプライマリーキーに科目をデータベースから読み出す
-        
-        do {
-            let realm = try! Realm()
-            //            let obj = realm.objects(RealmStudent.self).last!
-            let obj = realm.object(ofType: Subject.self, forPrimaryKey: indexPath.item)
-            print(obj?.id)
-            print(obj?.name)
-            if(obj?.id == nil){
-                cell.subject_label.text = ""
-            }
-            else {
-                cell.subject_label.text = obj!.name
-            }
-//            print(obj?.name)
-//            print(obj?.age)
-//            //            print(obj?.name)
-//            //            print(obj?.age)
-        } catch  {
-            print("")
-        }
-        
+        cell.subject_label.text = getdata(index: indexPath.item)
 //        cell.subject_label.text = SubjectNames[indexPath.item]
 //        
 //        cell.subject_label.text = SubjectNames[indexPath.item]
-//        
-        
-        
-        
+
         //セルの背景色をランダムに設定する。
         //cell.backgroundColor = UIColor(red: CGFloat(drand48()),green: CGFloat(drand48()),blue: CGFloat(drand48()),alpha: 1.0)
         return cell
@@ -88,6 +65,11 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
         print("tap!")
+        
+        
+        
+        
+        /*
         do{
             let realm = try! Realm()
             let obj = realm.object(ofType: Subject.self, forPrimaryKey: indexPath.item)
@@ -101,7 +83,7 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         catch{
             print("Extension Error")
         }
-
+*/
     }
     // Segue 準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
@@ -119,6 +101,28 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
 //        }
     }
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    //データベースからデータ持ってくる
+    func getdata(index :Int) -> String{
+        var objdata = ""
+        do{
+            let realm = try! Realm()
+            let obj = realm.object(ofType: Subject.self, forPrimaryKey: index)
+            //            print(obj?.id)
+            //            print(obj?.name)
+            if (obj?.name != nil){
+                objdata = (obj?.name)!
+            }
+            else{
+                objdata = ""
+            }
+        }
+        catch{
+            print("Extension Error")
+        }
+        
+        return objdata
+    }
     
     /*
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
