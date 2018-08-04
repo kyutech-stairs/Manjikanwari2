@@ -67,11 +67,6 @@ class TableView: FormViewController {
             } catch {
                 print("Exception error")
             }
-            
-            
-            
-            
-            
 //        if ((userDefaults.object(forKey: "Subject")) != nil) {
 //            print("データ有り")
 //            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]

@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate{
-    
+    let SubjectData = Subject()
     //let SubjectNames: [String] = ["","プログラム設計","","","人工知能プログラミング","","プログラム設計","","","人工知能プログラミング","言語処理工学","","言語処理工学","実験Ⅱ","OS","OS","離散数学Ⅰ",
     //                              "","実験Ⅱ","離散数学Ⅰ","","","","情報人類学","法律学B"]
    // var SubjectNames = Array(repeating:"", count:25)
@@ -33,7 +33,7 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         cell.subjectText.text = SubjectNames[indexPath.item]
         */
         //indexpathをプライマリーキーに科目をデータベースから読み出す
-        cell.subject_label.text = getdata(index: indexPath.item)
+        cell.subject_label.text = Subject.getdata(index: indexPath.item)
 //        cell.subject_label.text = SubjectNames[indexPath.item]
 //        
 //        cell.subject_label.text = SubjectNames[indexPath.item]
@@ -65,25 +65,14 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
         print("tap!")
-        
-        
-        
-        
-        /*
-        do{
-            let realm = try! Realm()
-            let obj = realm.object(ofType: Subject.self, forPrimaryKey: indexPath.item)
-//            print(obj?.id)
-//            print(obj?.name)
-            if(obj?.id == nil){
-                SubjectID = indexPath.item
-                performSegue(withIdentifier: "Segue", sender: nil)
-            }
+        var ojbdata = Subject.getdata(index: indexPath.item)
+        if(ojbdata == ""){
+            SubjectID = indexPath.item
+            performSegue(withIdentifier: "Segue", sender: nil)
         }
-        catch{
-            print("Extension Error")
+        else{
+            
         }
-*/
     }
     // Segue 準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
@@ -102,38 +91,8 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
     }
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //データベースからデータ持ってくる
-    func getdata(index :Int) -> String{
-        var objdata = ""
-        do{
-            let realm = try! Realm()
-            let obj = realm.object(ofType: Subject.self, forPrimaryKey: index)
-            //            print(obj?.id)
-            //            print(obj?.name)
-            if (obj?.name != nil){
-                objdata = (obj?.name)!
-            }
-            else{
-                objdata = ""
-            }
-        }
-        catch{
-            print("Extension Error")
-        }
-        
-        return objdata
-    }
-    
-    /*
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        
-        // Configure the cell
-        //cell.label.backgroundColor =  colors[indexPath.item]
-        
-        return cell
-    }
- */
+
+
 
     /*
     // MARK: - Navigation
@@ -145,12 +104,5 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
     }
     */
 }
-//extension TimetableView: UITabBarControllerDelegate {
-//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-//        print("selected")
-//        self.displayTimeTable()
-//        self.collectionView.reloadData()
-//        
-//    }
-//}
+
 

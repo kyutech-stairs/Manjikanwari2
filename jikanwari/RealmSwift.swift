@@ -16,4 +16,27 @@ class Subject: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
+    
+    class func getdata(index :Int) -> String{
+        var objdata = ""
+        do{
+            let realm = try! Realm()
+            let obj = realm.object(ofType: Subject.self, forPrimaryKey: index)
+            //            print(obj?.id)
+            //            print(obj?.name)
+            if (obj?.name != nil){
+                objdata = (obj?.name)!
+            }
+            else{
+                objdata = ""
+            }
+        }
+        catch{
+            print("Extension Error")
+        }
+        
+        return objdata
+    }
+    
+    
 }
