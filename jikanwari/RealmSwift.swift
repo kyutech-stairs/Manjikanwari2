@@ -16,7 +16,7 @@ class Subject: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
-    
+   
     class func getdata(index :Int) -> String{
         var objdata = ""
         do{
@@ -37,6 +37,23 @@ class Subject: Object {
         
         return objdata
     }
+    
+    class func writedata(index :Int,name :String){
+        let SubjectData = Subject()
+        SubjectData.id = index
+        SubjectData.name = name
+        
+        do {
+            let realm = try Realm()  // Realmのインスタンスを作成します。
+            try! realm.write {
+            realm.add(SubjectData)  // 作成した「realm」というインスタンスにrealmDataを書き込みます。
+            }
+            } catch {
+            print("Exception error")
+            }
+    }
+    
+    
     
     
 }

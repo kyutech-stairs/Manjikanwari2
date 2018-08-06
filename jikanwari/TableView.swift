@@ -59,14 +59,16 @@ class TableView: FormViewController {
             SubjectData.name = name
             
             
-            do {
-                let realm = try Realm()  // Realmのインスタンスを作成します。
-                try! realm.write {
-                    realm.add(self.SubjectData)  // 作成した「realm」というインスタンスにrealmDataを書き込みます。
-                }
-            } catch {
-                print("Exception error")
-            }
+            Subject.writedata(index: receiveID, name: name)
+            
+//            do {
+//                let realm = try Realm()  // Realmのインスタンスを作成します。
+//                try! realm.write {
+//                    realm.add(self.SubjectData)  // 作成した「realm」というインスタンスにrealmDataを書き込みます。
+//                }
+//            } catch {
+//                print("Exception error")
+//            }
 //        if ((userDefaults.object(forKey: "Subject")) != nil) {
 //            print("データ有り")
 //            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
