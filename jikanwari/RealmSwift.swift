@@ -38,22 +38,37 @@ class Subject: Object {
         return objdata
     }
     
-    class func writedata(index :Int,name :String){
+    class func writedata(id :Int,name :String){
         let SubjectData = Subject()
-        SubjectData.id = index
+        SubjectData.id = id
         SubjectData.name = name
         
         do {
             let realm = try Realm()  // Realmのインスタンスを作成します。
             try! realm.write {
-            realm.add(SubjectData)  // 作成した「realm」というインスタンスにrealmDataを書き込みます。
+                realm.add(SubjectData)  // 作成した「realm」というインスタンスにrealmDataを書き込みます。
             }
-            } catch {
+        } catch {
             print("Exception error")
-            }
+        }
     }
     
-    
-    
+    class func updatedata(id :Int,updatename :String){
+        do {
+            let realm = try! Realm()
+            let obj = realm.object(ofType: Subject.self, forPrimaryKey: id)
+            try! realm.write {
+                obj?.name = updatename
+            }
+        } catch {
+            
+        }
+
+    }
     
 }
+    
+    
+    
+    
+

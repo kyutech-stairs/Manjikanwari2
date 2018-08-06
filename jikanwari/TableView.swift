@@ -59,7 +59,7 @@ class TableView: FormViewController {
             SubjectData.name = name
             
             
-            Subject.writedata(index: receiveID, name: name)
+            Subject.writedata(id: receiveID, name: name)
             
 //            do {
 //                let realm = try Realm()  // Realmのインスタンスを作成します。

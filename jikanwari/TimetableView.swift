@@ -71,6 +71,8 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
             performSegue(withIdentifier: "Segue", sender: nil)
         }
         else{
+            SubjectID = indexPath.item
+            performSegue(withIdentifier: "Segue2", sender: nil)
             
         }
     }
@@ -80,6 +82,11 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
             let vc = segue.destination as! TableView
             vc.receiveID = SubjectID
         }
+        else if (segue.identifier == "Segue2") {
+            let vc = segue.destination as! UpdateSubjectView
+            vc.receiveID = SubjectID
+        }
+        
     }
     
     func displayTimeTable(){
