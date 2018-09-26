@@ -7,18 +7,18 @@
 //
 
 import UIKit
-
+import RealmSwift
 class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate{
-    
+    let SubjectData = Subject()
     //let SubjectNames: [String] = ["","プログラム設計","","","人工知能プログラミング","","プログラム設計","","","人工知能プログラミング","言語処理工学","","言語処理工学","実験Ⅱ","OS","OS","離散数学Ⅰ",
     //                              "","実験Ⅱ","離散数学Ⅰ","","","","情報人類学","法律学B"]
-    var SubjectNames = Array(repeating:"", count:25)
+   // var SubjectNames = Array(repeating:"", count:25)
     var SubjectID = 0
-    let userDefaults = UserDefaults.standard
+   // let userDefaults = UserDefaults.standard
     //データの個数を返すメソッド
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return SubjectNames.count
+        return 25
     }
     
     //データを返すメソッド
@@ -32,10 +32,12 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
         
         cell.subjectText.text = SubjectNames[indexPath.item]
         */
-        cell.subject_label.text = SubjectNames[indexPath.item]
-        
-        cell.subject_label.text = SubjectNames[indexPath.item]
-        
+        //indexpathをプライマリーキーに科目をデータベースから読み出す
+        cell.subject_label.text = Subject.getdata(index: indexPath.item)
+//        cell.subject_label.text = SubjectNames[indexPath.item]
+//        
+//        cell.subject_label.text = SubjectNames[indexPath.item]
+
         //セルの背景色をランダムに設定する。
         //cell.backgroundColor = UIColor(red: CGFloat(drand48()),green: CGFloat(drand48()),blue: CGFloat(drand48()),alpha: 1.0)
         return cell
@@ -63,9 +65,15 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
         print("tap!")
-        if(SubjectNames[indexPath.item] == ""){
+        var ojbdata = Subject.getdata(index: indexPath.item)
+        if(ojbdata == ""){
             SubjectID = indexPath.item
             performSegue(withIdentifier: "Segue", sender: nil)
+        }
+        else{
+            SubjectID = indexPath.item
+            performSegue(withIdentifier: "Segue2", sender: nil)
+            
         }
     }
     // Segue 準備
@@ -74,27 +82,24 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
             let vc = segue.destination as! TableView
             vc.receiveID = SubjectID
         }
+        else if (segue.identifier == "Segue2") {
+            let vc = segue.destination as! UpdateSubjectView
+            vc.receiveID = SubjectID
+        }
+        
     }
     
     func displayTimeTable(){
-        if ((userDefaults.object(forKey: "Subject")) != nil) {
-            //print("データ有り")
-            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
-            print(SubjectNames)
-        }
+//        if ((userDefaults.object(forKey: "Subject")) != nil) {
+//            //print("データ有り")
+//            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
+//            print(SubjectNames)
+//        }
     }
     @IBOutlet weak var collectionView: UICollectionView!
     
-    /*
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        
-        // Configure the cell
-        //cell.label.backgroundColor =  colors[indexPath.item]
-        
-        return cell
-    }
- */
+
+
 
     /*
     // MARK: - Navigation
@@ -106,12 +111,5 @@ class TimetableView: UIViewController, UICollectionViewDataSource,UICollectionVi
     }
     */
 }
-//extension TimetableView: UITabBarControllerDelegate {
-//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-//        print("selected")
-//        self.displayTimeTable()
-//        self.collectionView.reloadData()
-//        
-//    }
-//}
+
 

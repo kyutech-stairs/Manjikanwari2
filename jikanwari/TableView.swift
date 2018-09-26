@@ -8,14 +8,15 @@
 
 import UIKit
 import Eureka
-
+import RealmSwift
 class TableView: FormViewController {
     var receiveID = 0
-    let userDefaults = UserDefaults.standard
-    var SubjectNames = Array(repeating:"", count:25)
+//    let userDefaults = UserDefaults.standard
+//    var SubjectNames = Array(repeating:"", count:25)
+    let SubjectData = Subject()
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+            print(Realm.Configuration.defaultConfiguration.fileURL!)//リレーションファイルの場所
             form +++ Section("科目情報")
             <<< NameRow("科目名"){ row in
                 row.title = "科目名"
@@ -38,7 +39,7 @@ class TableView: FormViewController {
                     self.didtapSaveButton()
                 }
         }
-        print(receiveID)
+//        print(receiveID)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,15 +55,29 @@ class TableView: FormViewController {
         
         if(name != ""){
             
-        if ((userDefaults.object(forKey: "Subject")) != nil) {
-            print("データ有り")
-            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
-        }
- 
-        // SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
-        SubjectNames[receiveID] = name
-        userDefaults.set(SubjectNames,forKey: "Subject")
-        
+            SubjectData.id = receiveID
+            SubjectData.name = name
+            
+            
+            Subject.writedata(id: receiveID, name: name)
+            
+//            do {
+//                let realm = try Realm()  // Realmのインスタンスを作成します。
+//                try! realm.write {
+//                    realm.add(self.SubjectData)  // 作成した「realm」というインスタンスにrealmDataを書き込みます。
+//                }
+//            } catch {
+//                print("Exception error")
+//            }
+//        if ((userDefaults.object(forKey: "Subject")) != nil) {
+//            print("データ有り")
+//            SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
+//        }
+//
+//        // SubjectNames = userDefaults.array(forKey: "Subject") as! [String]
+//        SubjectNames[receiveID] = name
+//        userDefaults.set(SubjectNames,forKey: "Subject")
+//
         self.navigationController?.popViewController(animated: true)
         
         }
